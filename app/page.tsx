@@ -59,8 +59,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-screen w-full">
       <Header />
-
-      <div className="flex h-full">
+      <main className="flex h-full">
         <div className="flex-grow h-full">
           <Map
             mapboxAccessToken={mapboxToken}
@@ -75,18 +74,20 @@ export default function Home() {
                 : "mapbox://styles/mapbox/dark-v10"
             }
           >
-            {markers.map((marker, index) => (
+          {
+            markers.map((marker, index) => (
               <Marker
-                key={index}
-                longitude={marker.longitude}
-                latitude={marker.latitude}
-                color={marker.color}
+              key={index}
+              longitude={marker.longitude}
+              latitude={marker.latitude}
+              color={marker.color}
               />
-            ))}
+            ))
+          }
           </Map>
         </div>
         <PropertiesDisplay />
-      </div>
+      </main>
     </div>
   );
 }

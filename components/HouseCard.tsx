@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
